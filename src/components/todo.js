@@ -22,7 +22,7 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { authMiddleWare } from '../util/auth';
+// import { authMiddleWare } from '../util/auth';
 
 const styles = (theme) => ({
 	content: {
@@ -185,11 +185,11 @@ class todo extends Component {
 			);
 		});
 
-		const DialogContent = withStyles((theme) => ({
-			viewRoot: {
-				padding: theme.spacing(2)
-			}
-		}))(MuiDialogContent);
+		// const DialogContent = withStyles((theme) => ({
+		// 	viewRoot: {
+		// 		padding: theme.spacing(2)
+		// 	}
+		// }))(MuiDialogContent);
 
 		dayjs.extend(relativeTime);
 		const { classes } = this.props;
