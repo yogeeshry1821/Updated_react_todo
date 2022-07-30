@@ -27,7 +27,8 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 const styles = (theme) => ({
 	content: {
 		flexGrow: 1,
-		padding: theme.spacing(3)
+		padding: theme.spacing(3),
+		"font-color":'white',
 	},
 	appBar: {
 		position: 'relative'
@@ -56,7 +57,9 @@ const styles = (theme) => ({
 	},
 	toolbar: theme.mixins.toolbar,
 	root: {
-		minWidth: 470
+		// minWidth: 470,
+		'background-color':'#5C5C5C',
+		'color':'#ffffff'
 	},
 	bullet: {
 		display: 'inline-block',
@@ -311,22 +314,22 @@ class todo extends Component {
 
 					<Grid container spacing={2}>
 						{this.state.todos.map((todo) => (
-							<Grid item xs={12} sm={6} id={todo.id}>
-								<Card className={classes.root} variant="outlined">
+							<Grid item xs={12} sm={6} id={todo.id} style={{"max-width":"30%"}}>
+								<Card className={classes.root} variant="outlined" style={{"height":"100%"}}>
 									<CardContent>
 										<Typography variant="h5" component="h2">
 											{todo.title}
 										</Typography>
 									</CardContent>
 									<CardActions>
-										<Button size="small" color="primary" onClick={() => this.handleViewOpen({ todo })}>
+										<Button size="small" style={{"background-color":"#C620A7",'color':'#ffffff'}} onClick={() => this.handleViewOpen({ todo })}>
 											{' '}
 											View{' '}
 										</Button>
-										<Button size="small" color="primary" onClick={() => this.handleEditClickOpen({ todo })}>
+										<Button size="small" style={{"background-color":"#C620A7",'color':'#ffffff'}} onClick={() => this.handleEditClickOpen({ todo })}>
 											Edit
 										</Button>
-										<Button size="small" color="primary" onClick={() => this.deleteTodoHandler({ todo })}>
+										<Button size="small" style={{"background-color":"#C620A7",'color':'#ffffff'}} onClick={() => this.deleteTodoHandler({ todo })}>
 											Delete
 										</Button>
 									</CardActions>

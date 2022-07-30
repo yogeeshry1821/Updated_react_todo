@@ -7,9 +7,9 @@ import Home from './pages/home';
 const theme = createMuiTheme({
 	palette: {
 		primary: {
-			light: '#33c9dc',
-			main: '#FF5722',
-			dark: '#d50000',
+			light: '#C620A7',
+			main: '#171717',
+			dark: '#C620A7',
 			contrastText: '#fff'
 		}
   }
