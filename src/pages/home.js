@@ -103,7 +103,7 @@ class home extends Component {
 					<CssBaseline />
 					<AppBar position="fixed" className={classes.appBar}>
 						<Toolbar>
-							<Typography variant="h3" noWrap style={{"paddingTop":"20px","text-align":"center"}}>
+							<Typography variant="h3" noWrap style={{"paddingTop":"20px","text-align":"center","marginLeft":"40px","paddingInline":"70vh"}}>
 								To-do List
 							</Typography>
 						</Toolbar>

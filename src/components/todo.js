@@ -256,7 +256,7 @@ class todo extends Component {
 			return (
 				<main className={classes.content}>
 					<div className={classes.toolbar} />
-					{this.state.uiLoading && <CircularProgress size={150} className={classes.uiProgess} />}
+					{this.state.uiLoading && <CircularProgress size={10} className={classes.uiProgess} />}
 				</main>
 			);
 		} else {
@@ -292,7 +292,7 @@ class todo extends Component {
 						</AppBar>
 
 						<form className={classes.form} noValidate>
-							<Grid container spacing={2}>
+							<Grid container spacing={5}>
 								<Grid item xs={12}>
 									<TextField
 										variant="outlined"
@@ -314,22 +314,22 @@ class todo extends Component {
 
 					<Grid container spacing={2}>
 						{this.state.todos.map((todo) => (
-							<Grid item xs={12} sm={6} id={todo.id} style={{"max-width":"30%"}}>
-								<Card className={classes.root} variant="outlined" style={{"height":"100%"}}>
+							<Grid item xs={12} sm={6} id={todo.id} style={{"maxWidth":"33.3%"}}>
+								<Card className={classes.root} variant="outlined" style={{"height":"100%","width":"100%"}}>
 									<CardContent>
 										<Typography variant="h5" component="h2">
 											{todo.title}
 										</Typography>
 									</CardContent>
 									<CardActions>
-										<Button size="small" style={{"background-color":"#C620A7",'color':'#ffffff'}} onClick={() => this.handleViewOpen({ todo })}>
+										<Button size="small" style={{"backgroundColor":"#C620A7",'color':'#ffffff'}} onClick={() => this.handleViewOpen({ todo })}>
 											{' '}
 											View{' '}
 										</Button>
-										<Button size="small" style={{"background-color":"#C620A7",'color':'#ffffff'}} onClick={() => this.handleEditClickOpen({ todo })}>
+										<Button size="small" style={{"backgroundColor":"#C620A7",'color':'#ffffff'}} onClick={() => this.handleEditClickOpen({ todo })}>
 											Edit
 										</Button>
-										<Button size="small" style={{"background-color":"#C620A7",'color':'#ffffff'}} onClick={() => this.deleteTodoHandler({ todo })}>
+										<Button size="small" style={{"backgroundColor":"#C620A7",'color':'#ffffff'}} onClick={() => this.deleteTodoHandler({ todo })}>
 											Delete
 										</Button>
 									</CardActions>
