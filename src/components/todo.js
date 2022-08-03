@@ -123,8 +123,8 @@ class todo extends Component {
 		});
 	};
 
-	componentWillMount = () => {
-		axios
+	componentWillMount = async () => {
+		await axios
 			.get('https://jsonplaceholder.typicode.com/todos')
 			.then((response) => {
 				this.setState({
@@ -208,7 +208,7 @@ class todo extends Component {
 			});
 		};
 
-		const handleSubmit = (event) => {
+		const handleSubmit = async (event) => {
 			event.preventDefault();
 			const userTodo = {
 				title: this.state.title,
@@ -217,6 +217,7 @@ class todo extends Component {
 			let options = {};
 			if (this.state.buttonType === 'Edit') {
 				console.log(this.state.todoId);
+				console.log('Edited Success')
 				options = {
 					url: `https://jsonplaceholder.typicode.com/todos/${this.state.todoId}`,
 					method: 'patch',
@@ -233,7 +234,7 @@ class todo extends Component {
 					data: userTodo
 				};
 			}
-			axios(options)
+			await axios(options)
 				.then(() => {
 					this.setState({ open: false });
 					window.location.reload();
@@ -283,7 +284,7 @@ class todo extends Component {
 								<Button
 									autoFocus
 									color="inherit"
-									onClick={handleSubmit}
+									onClick={ handleSubmit}
 									className={classes.submitButton}
 								>
 									{this.state.buttonType === 'Edit' ? 'Save' : 'Submit'}
@@ -314,7 +315,7 @@ class todo extends Component {
 
 					<Grid container spacing={2}>
 						{this.state.todos.map((todo) => (
-							<Grid item xs={12} sm={6} id={todo.id} style={{"maxWidth":"33.3%"}}>
+							<Grid key={todo.id} item xs={12} sm={6} id={todo.id} style={{"maxWidth":"33.3%"}}>
 								<Card className={classes.root} variant="outlined" style={{"height":"100%","width":"100%"}}>
 									<CardContent>
 										<Typography variant="h5" component="h2">
